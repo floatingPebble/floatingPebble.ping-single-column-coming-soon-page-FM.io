@@ -175,6 +175,7 @@ h6 {
     color: white;
     background-color: var(--BLUE);
     font-size: 0.65rem;
+    font-weight: 600;
     height: 2rem;
     margin-bottom: 3.4rem;
 }
