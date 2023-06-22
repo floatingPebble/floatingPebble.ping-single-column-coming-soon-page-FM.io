@@ -1,0 +1,298 @@
+/*
+  1. Use a more-intuitive box-sizing model.
+*/
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+}
+
+/*
+  2. Remove default margin
+*/
+* {
+    margin: 0;
+}
+
+/*
+  3. Allow percentage-based heights in the application
+*/
+html,
+body {
+    height: 100%;
+}
+
+/*
+  Typographic tweaks!
+  4. Add accessible line-height
+  5. Improve text rendering
+*/
+body {
+    line-height: 1.5;
+    -webkit-font-smoothing: antialiased;
+    padding-inline: 7.5%;
+    padding-top: 4rem;
+}
+
+/*
+  6. Improve media defaults
+*/
+img,
+picture,
+video,
+canvas,
+svg {
+    display: block;
+    max-width: 100%;
+}
+
+/*
+  7. Remove built-in form typography styles
+*/
+input,
+button,
+textarea,
+select {
+    font: inherit;
+}
+
+/*
+  8. Avoid text overflows
+*/
+p,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    overflow-wrap: break-word;
+}
+
+/*
+  9. Create a root stacking context
+*/
+#root,
+#__next {
+    isolation: isolate;
+}
+
+:root {
+    /*Primary*/
+    --BLUE: hsl(223, 87%, 63%);
+    /*Secondary*/
+    --LIGHT-BLUE: hsl(223, 100%, 88%);
+    --LIGHT-BLUE-HOVER: hsl(223, 88%, 75%);
+    --LIGHT-RED: hsl(354, 100%, 66%);
+    /*Neutral*/
+    --GRAY: hsl(0, 0%, 59%);
+    --VERY-DARK-BLUE: hsl(209, 33%, 12%);
+
+    font-family: 'Libre Franklin', sans-serif;
+    font-size: 20px;
+}
+
+.main-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.logo-wrapper {
+    width: 17%;
+    margin-bottom: 2rem;
+}
+
+.headline {
+    color: var(--GRAY);
+    font-size: 1.1rem;
+    font-weight: 300;
+    margin-bottom: 0.7rem;
+}
+
+.headline span {
+    color: black;
+    font-weight: 700;
+}
+
+.subscribe {
+    font-size: 0.6rem;
+    font-weight: 600;
+    color: var(--GRAY);
+    margin-bottom: 1.5rem;
+}
+
+.email-form {
+    display: flex;
+    flex-direction: column;
+    width: 88%;
+}
+
+.input-wrapper {
+    position: relative;
+    margin-bottom: 0.5rem;
+}
+
+.email-input {
+    width: 100%;
+    border: 1px solid var(--LIGHT-BLUE);
+    border-radius: 50rem;
+    padding-block: 0.425rem 0.5rem;
+    padding-left: 1.6rem;
+    font-size: 0.65rem;
+}
+
+.input-wrapper.invalid .email-input {
+    border-color: var(--LIGHT-RED);
+    outline: none;
+}
+
+.input-wrapper.invalid+.submit-btn {
+    margin-top: 1.8rem;
+}
+
+.input-wrapper.invalid:after {
+    content: attr(data-after);
+    color: var(--LIGHT-RED);
+    font-style: italic;
+    font-size: 0.55rem;
+    position: absolute;
+    bottom: -1.1rem;
+    left: 1.6rem;
+    width: 100%;
+    font-weight: 600;
+}
+
+.email-input::placeholder {
+    font-size: 0.65rem;
+    color: var(--LIGHT-BLUE);
+}
+
+.submit-btn {
+    width: 100%;
+    border: none;
+    border-radius: 50rem;
+    color: white;
+    background-color: var(--BLUE);
+    font-size: 0.65rem;
+    height: 2rem;
+    margin-bottom: 3.4rem;
+}
+
+.submit-btn:hover {
+    background-color: var(--LIGHT-BLUE-HOVER);
+    cursor: pointer;
+}
+
+.illustration {
+    margin-bottom: 6.2rem;
+}
+
+.socials {
+    display: flex;
+    margin-bottom: 1.4rem;
+}
+
+.socials i {
+    margin-inline: 0.3rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 1.5rem;
+    width: 1.5rem;
+    font-size: 0.7rem;
+    color: var(--BLUE);
+    border: 1px solid hsl(223, 74%, 92%);
+    border-radius: 0.75rem;
+}
+
+.socials i:hover {
+    color: white;
+    background-color: var(--BLUE);
+    border-color: var(--BLUE);
+    cursor: pointer;
+}
+
+.copyright {
+    font-size: 0.55rem;
+    color: var(--GRAY);
+    padding-bottom: 1.8rem;
+}
+
+@media screen and (min-width: 612px) {
+
+    body {
+        padding-top: 4.35rem;
+    }
+
+    .main-container {
+        max-width: 32rem;
+        margin-inline: auto;
+    }
+
+    .logo-wrapper {
+        width: 13.2%;
+    }
+
+    .headline {
+        font-size: 2.4rem;
+        margin-bottom: 0.39rem;
+    }
+
+    .subscribe {
+        font-size: 1rem;
+        font-weight: 300;
+        color: black;
+        margin-bottom: 1.85rem;
+    }
+
+    .email-form {
+        flex-direction: row;
+        width: 100%;
+        margin-bottom: 0.9rem;
+    }
+
+    .email-input {
+        height: 100%;
+        width: 100%;
+    }
+
+    .input-wrapper.invalid+.submit-btn {
+        margin-top: 0;
+    }
+
+    .submit-btn,
+    .input-wrapper {
+        height: 2.8rem;
+    }
+
+    .email-input,
+    .email-input::placeholder,
+    .submit-btn {
+        font-size: 0.84rem;
+    }
+
+    .input-wrapper {
+        width: 66%;
+    }
+
+    .input-wrapper.invalid:after {
+        font-size: 0.62rem;
+        bottom: -1.25rem;
+        left: 1.6rem;
+    }
+
+    .submit-btn {
+        width: 31.5%;
+        margin-left: 2.5%;
+    }
+
+    .illustration {
+        margin-bottom: 3.57rem;
+    }
+
+    .copyright {
+        font-size: 0.6rem;
+        padding-bottom: 2.4rem;
+    }
+}
